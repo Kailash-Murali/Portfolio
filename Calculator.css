@@ -1,0 +1,12 @@
+.Heading{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+.Numbers{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
