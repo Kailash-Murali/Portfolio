@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Consolas&display=swap");
+
+      body {
+        font-family: "Consolas", monospace;
+      }
+
+      .typewriter {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 2s steps(20, end);
+        width: 0;
+        font-size: 18em;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-white transition-all duration-1000 ease-in-out">
+    <div
+      id="welcome-section"
+      class="fixed inset-0 flex items-center justify-center opacity-100 transition-all duration-500"
+    >
+      <h1 class="text-black typewriter text-center">Welcome!</h1>
+    </div>
+
+    <div
+      id="card-section"
+      class="fixed inset-0 flex items-center justify-center opacity-0 bg-black transition-all duration-1000 pointer-events-none"
+    >
+      <div
+        id="main-card"
+        class="w-64 h-64 bg-black rounded-full border-white shadow-[0_0_20px_10px_rgba(255,255,255,0.3)] flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 group"
+      >
+        <span class="text-white text-2xl z-10">I'm Kailash</span>
+        <div
+          class="absolute inset-0 bg-gradient-radial from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        ></div>
+
+        <div
+          id="about-card"
+          class="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 w-32 h-32 bg-white rounded-full flex items-center justify-center top-[-150px] left-1/2 transform -translate-x-1/2"
+        >
+          <span class="text-black">About</span>
+        </div>
+
+        <div
+          id="projects-card"
+          class="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 w-32 h-32 bg-white rounded-full flex items-center justify-center bottom-[-150px] right-[-100px]"
+        >
+          <span class="text-black">Projects</span>
+        </div>
+
+        <div
+          id="contact-card"
+          class="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 w-32 h-32 bg-white rounded-full flex items-center justify-center bottom-[-150px] left-[-100px]"
+        >
+          <span class="text-black">Contact</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const welcomeSection = document.getElementById("welcome-section");
+        const cardSection = document.getElementById("card-section");
+        setTimeout(() => {
+          welcomeSection.classList.add("opacity-0");
+          document.body.classList.add("bg-black");
+          setTimeout(() => {
+            welcomeSection.style.display = "none";
+            cardSection.classList.remove("opacity-0");
+            cardSection.classList.add("pointer-events-auto");
+          }, 1300);
+        }, 1900);
+        // Card hover effects
+        const mainCard = document.querySelector("#card-section > div");
+        mainCard.addEventListener("mousemove", (e) => {
+          const rect = mainCard.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          mainCard.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.1), transparent 95%)`;
+          mainCard.style.transform = "scale(1.05)";
+        });
+
+        mainCard.addEventListener("mouseleave", () => {
+          mainCard.style.background = "black";
+          mainCard.style.transform = "scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>
