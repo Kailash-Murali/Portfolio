@@ -1,0 +1,83 @@
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        /* Set default odd row colors: black bg, white stroked text */
+        background-color: #ffffff;
+      }
+      /* Marquee container for seamless scrolling */
+      .marquee-container {
+        /* Make sure the content will scroll continuously */
+        display: inline-flex;
+        white-space: nowrap;
+        /* Duplicate the content inside so that the text is always present */
+        /* Width set to auto; animation will translate relative to its full width */
+        position: absolute;
+        /* top: 50%; */
+        transform: translateY(-50%);
+        /* Prevent text wrapping */
+      }
+      /* The welcome text styling */
+      .welcome-text {
+        font-style: italic;
+        font-size: 4rem;
+        /* Make the fill transparent with visible text stroke */
+        color: transparent;
+        -webkit-text-stroke: 2px;
+        /* text-stroke: 2px; */
+        padding: 0 2rem;
+      }
+      /* Color adjustments based on row background */
+      .row:nth-child(odd) .welcome-text {
+        -webkit-text-stroke-color: #000000;
+      }
+      .row:nth-child(even) .welcome-text {
+        -webkit-text-stroke-color: #000000;
+      }
+      /* Row-specific fonts */
+      .row:nth-child(1) .welcome-text {
+        font-family: 'Oswald', sans-serif;
+      }
+      .row:nth-child(2) .welcome-text {
+        font-family: 'Bebas Neue', sans-serif;
+      }
+      .row:nth-child(3) .welcome-text {
+        font-family:  'Alfa Slab One'; 
+      }
+      .row:nth-child(4) .welcome-text {
+        font-family: 'Bebas Neue', sans-serif;
+      }
+      .row:nth-child(5) .welcome-text {
+        font-family: 'Anton', sans-serif;
+      }
+      /* Marquee animation replicating the deprecated <marquee> tag */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-40%);
+        }
+      }
+      /* Apply animation on the first copy */
+      .animate {
+        animation: marquee 10s linear infinite;
+      }
+      /* Reverse animation for alternate rows */
+      .row:nth-child(even) .animate {
+        animation-direction: reverse;
+      }
