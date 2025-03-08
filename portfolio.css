@@ -1,83 +1,290 @@
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-        overflow: hidden;
-      }
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-      .row {
-        flex: 1;
-        position: relative;
-        overflow: hidden;
-        /* Set default odd row colors: black bg, white stroked text */
-        background-color: #ffffff;
-      }
-      /* Marquee container for seamless scrolling */
-      .marquee-container {
-        /* Make sure the content will scroll continuously */
-        display: inline-flex;
-        white-space: nowrap;
-        /* Duplicate the content inside so that the text is always present */
-        /* Width set to auto; animation will translate relative to its full width */
-        position: absolute;
-        /* top: 50%; */
-        transform: translateY(-50%);
-        /* Prevent text wrapping */
-      }
-      /* The welcome text styling */
-      .welcome-text {
-        font-style: italic;
-        font-size: 4rem;
-        /* Make the fill transparent with visible text stroke */
-        color: transparent;
-        -webkit-text-stroke: 2px;
-        /* text-stroke: 2px; */
-        padding: 0 2rem;
-      }
-      /* Color adjustments based on row background */
-      .row:nth-child(odd) .welcome-text {
-        -webkit-text-stroke-color: #000000;
-      }
-      .row:nth-child(even) .welcome-text {
-        -webkit-text-stroke-color: #000000;
-      }
-      /* Row-specific fonts */
-      .row:nth-child(1) .welcome-text {
-        font-family: 'Oswald', sans-serif;
-      }
-      .row:nth-child(2) .welcome-text {
-        font-family: 'Bebas Neue', sans-serif;
-      }
-      .row:nth-child(3) .welcome-text {
-        font-family:  'Alfa Slab One'; 
-      }
-      .row:nth-child(4) .welcome-text {
-        font-family: 'Bebas Neue', sans-serif;
-      }
-      .row:nth-child(5) .welcome-text {
-        font-family: 'Anton', sans-serif;
-      }
-      /* Marquee animation replicating the deprecated <marquee> tag */
-      @keyframes marquee {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-40%);
-        }
-      }
-      /* Apply animation on the first copy */
-      .animate {
-        animation: marquee 10s linear infinite;
-      }
-      /* Reverse animation for alternate rows */
-      .row:nth-child(even) .animate {
-        animation-direction: reverse;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  /* Set default odd row colors: black bg, white stroked text */
+  background-color: #ffffff;
+}
+
+/* Marquee container for seamless scrolling */
+.marquee-container {
+  /* Make sure the content will scroll continuously */
+  display: inline-flex;
+  white-space: nowrap;
+  /* Duplicate the content inside so that the text is always present */
+  /* Width set to auto; animation will translate relative to its full width */
+  position: absolute;
+  /* top: 50%; */
+  transform: translateY(-50%);
+  /* Prevent text wrapping */
+}
+
+/* The welcome text styling */
+.welcome-text {
+  font-style: italic;
+  font-size: 4rem;
+  /* Make the fill transparent with visible text stroke */
+  color: transparent;
+  -webkit-text-stroke: 2px;
+  /* text-stroke: 2px; */
+  padding: 0 2rem;
+}
+
+/* Color adjustments based on row background */
+.row:nth-child(odd) .welcome-text {
+  -webkit-text-stroke-color: #000000;
+}
+
+.row:nth-child(even) .welcome-text {
+  -webkit-text-stroke-color: #000000;
+}
+
+/* Row-specific fonts */
+.row:nth-child(1) .welcome-text {
+  font-family: 'Oswald', sans-serif;
+}
+
+.row:nth-child(2) .welcome-text {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.row:nth-child(3) .welcome-text {
+  font-family: 'Alfa Slab One';
+}
+
+.row:nth-child(4) .welcome-text {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.row:nth-child(5) .welcome-text {
+  font-family: 'Anton', sans-serif;
+}
+
+/* Marquee animation replicating the deprecated <marquee> tag */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-40%);
+  }
+}
+
+/* Apply animation on the first copy */
+.animate {
+  animation: marquee 10s linear infinite;
+}
+
+/* Reverse animation for alternate rows */
+.row:nth-child(even) .animate {
+  animation-direction: reverse;
+}
+
+/* Modified CSS snippet */
+
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 400px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.main-text {
+  margin-bottom: 15px;
+}
+
+.typing-text {
+  font-family: monospace;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 3rem;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 3s steps(12, end) forwards, blink-caret 0.5s step-end 6 forwards;
+}
+
+.hover-text {
+  font-family: monospace;
+  opacity: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .hover-text {
+  opacity: 1;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 12ch;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: white;
+  }
+}
+
+/* Card styling remains the same */
+
+/* Overlay for the transition effect */
+#transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 20;
+  display: none;
+}
+
+/* Animation keyframes for the circle transition */
+@keyframes circle-in-hesitate {
+  0% {
+    clip-path: circle(0%);
+  }
+
+  40% {
+    clip-path: circle(32%);
+  }
+
+  100% {
+    clip-path: circle(125%);
+  }
+}
+
+.transition-active {
+  display: block !important;
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
+}
+
+/* Add this to your CSS file */
+/* Night sky background */
+#night-sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  z-index: 15;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#night-sky.visible {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.stars-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.stars-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  transform-origin: center;
+}
+
+.stars-small {
+  background-image: radial-gradient(1px 1px at 50% 50%, white, rgba(0, 0, 0, 0));
+  background-size: 100px 100px;
+}
+
+.stars-medium {
+  background-image: radial-gradient(2px 2px at 50% 50%, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0));
+  background-size: 200px 200px;
+}
+
+.stars-large {
+  background-image: radial-gradient(3px 3px at 50% 50%, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+  background-size: 300px 300px;
+}
+
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.2;
+}
+
+.nebula-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #5e17eb, transparent 70%);
+  top: 30%;
+  left: 20%;
+}
+
+.nebula-2 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #0beef9, transparent 70%);
+  bottom: 10%;
+  right: 10%;
+}

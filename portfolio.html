@@ -9,7 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Oswald&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="port.css">
+    <link rel="stylesheet" href="./portfolio.css" />
+    <script src="./portfolio.js"></script>
   </head>
   <body>
     <!-- Create 5 rows; each will have duplicated content for seamless scrolling -->
@@ -91,6 +92,26 @@
         <span class="welcome-text">வணக்கம்</span>
         <span class="welcome-text">வணக்கம்</span>
         <span class="welcome-text">வணக்கம்</span>
+      </div>
+    </div>
+    <!-- Circular card in the center with a typing effect and hover message -->
+    <div class="card" id="intro-card">
+      <div class="card-content">
+        <div class="main-text">
+          <span class="typing-text">I'm Kailash!</span>
+        </div>
+        <div class="hover-text">Magic lies in the click!</div>
+      </div>
+    </div>
+    <div id="transition-overlay"></div>
+    <!-- Add this to your HTML file -->
+    <div id="night-sky" class="hidden">
+      <div class="stars-container">
+        <div class="stars-layer stars-small"></div>
+        <div class="stars-layer stars-medium"></div>
+        <div class="stars-layer stars-large"></div>
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
       </div>
     </div>
   </body>
