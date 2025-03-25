@@ -1,118 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Oswald&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./portfolio.css" />
-    <script src="./portfolio.js"></script>
-  </head>
-  <body>
-    <!-- Create 5 rows; each will have duplicated content for seamless scrolling -->
-    <div class="row">
-      <div class="marquee-container animate">
-        <!-- Repeat the welcome message several times -->
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <!-- Duplicate the content so that scrolling is continuous -->
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="marquee-container animate">
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-      </div>
-    </div>
+<head>
 
-    <div class="row">
-      <div class="marquee-container animate">
-        <!-- Repeat the welcome message several times -->
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <!-- Duplicate the content so that scrolling is continuous -->
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-      </div>
-    </div>
+  <!-- meta data -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Kailash Murali T" />
+  <title>Portfolio</title>
 
-    <div class="row">
-      <div class="marquee-container animate">
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-        <span class="welcome-text">Welcome</span>
-      </div>
-    </div>
+  <!-- CSS, JS & Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Bebas+Neue&family=Oswald&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <script src="portfolio.js"></script>
+</head>
 
-    <div class="row">
-      <div class="marquee-container animate">
-        <!-- Repeat the welcome message several times -->
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <!-- Duplicate the content so that scrolling is continuous -->
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-        <span class="welcome-text">வணக்கம்</span>
-      </div>
+<body>
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" class="dark-mode-toggle">
+    <span class="mode-icon">☯︎</span>
+  </button>
+
+  <!-- Welcome marquees -->
+  <div class="row">
+    <div class="marquee-container animate">
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
     </div>
-    <!-- Circular card in the center with a typing effect and hover message -->
-    <div class="card" id="intro-card">
+  </div>
+  <div class="row">
+    <div class="marquee-container animate">
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="marquee-container animate">
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="marquee-container animate">
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+      <span class="welcome-text">Welcome</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="marquee-container animate">
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+      <span class="welcome-text">வணக்கம்</span>
+    </div>
+  </div>
+
+  <!-- Welcome Card -->
+  <div class="card" id="intro-card">
+    <div class="card-content">
+      <div class="main-text">
+        <span class="typing-text">நான் Kailash</span>
+      </div>
+      <div class="hover-text">Magic lies in the click!</div>
+    </div>
+  </div>
+
+  <!-- Transition overlay -->
+  <div id="transition-overlay">
+    <!-- Introduction Card -->
+    <div class="second-card" id="second-card">
       <div class="card-content">
         <div class="main-text">
-          <span class="typing-text">I'm Kailash!</span>
+          <span class="second-card-text">I'm கைலாஷ்</span>
+          <div class="caption-text">Tap to reverse the magic!</div>
         </div>
-        <div class="hover-text">Magic lies in the click!</div>
       </div>
     </div>
-    <div id="transition-overlay"></div>
-    <!-- Add this to your HTML file -->
-    <div id="night-sky" class="hidden">
-      <div class="stars-container">
-        <div class="stars-layer stars-small"></div>
-        <div class="stars-layer stars-medium"></div>
-        <div class="stars-layer stars-large"></div>
-        <div class="nebula nebula-1"></div>
-        <div class="nebula nebula-2"></div>
+    <!-- Information -->
+    <div class="star-circles" id="star-circles">
+      <!-- Card 1: About -->
+      <div class="circle circle-1">
+        <span class="circle-text">About</span>
+        <div class="expanded-content">
+          <div class="content-inner">
+            <h2>About</h2>
+            <img src="./profile.jpg" alt="Profile" class="profile-image">
+            <p>I'm an avid programmer who is interested in the field of web development. My programming skillset include
+              Python, Java, C/C++, HTML, CSS & JS. I'm also interested in extra-curriculars, particularly quizzing and
+              have won many accolades</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2: Skills -->
+      <div class="circle circle-2">
+        <span class="circle-text">Skills</span>
+        <div class="expanded-content">
+          <div class="content-inner">
+            <h2>Skills</h2>
+            <div class="skills-container">
+              <div class="skill-item">
+                <h3>Python</h3>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h3>Java</h3>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h3>C, C++</h3>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h3>HTML, CSS & JS</h3>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3: Projects -->
+      <div class="circle circle-3">
+        <span class="circle-text">Projects</span>
+        <div class="expanded-content">
+          <div class="content-inner">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+              <div class="project-item">
+                <h3>Portfolio Website</h3>
+                <p>A simplistic protfolio based on the eternal truths of order and chaos</p>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JS</span>
+              </div>
+            </div>
+            <div class="project-item">
+              <h3>Loading Soon..</h3>
+              <p>Stay tuned!</p>
+              <span class="tech-tag">?</span>
+              <span class="tech-tag">?</span>
+            </div>
+            <a href="#" class="card-btn">See All Projects</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4: Resume -->
+      <div class="circle circle-4">
+        <span class="circle-text">Resume</span>
+        <div class="expanded-content">
+          <div class="content-inner">
+            <h2>Resume</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">2023 - Present</div>
+                <div class="timeline-content">
+                  <h3>Graduate Student</h3>
+                  <p>VITC</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">2008 - 2023</div>
+                <div class="timeline-content">
+                  <h3>Student</h3>
+                  <p>PSBB</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5: Contact -->
+      <div class="circle circle-5">
+        <span class="circle-text">Contact</span>
+        <div class="expanded-content">
+          <div class="content-inner">
+            <h2>Contact Me</h2>
+            <div class="contact-container">
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="contact-icon">📧</i>
+                  <p>kailashmurali17@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                  <i class="contact-icon">📍</i>
+                  <p>Chennai, TN, India</p>
+                </div>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/kailash-murali-t-66721b28b/" class="social-link">LinkedIn</a>
+                  <a href="https://github.com/Kailash-Murali" class="social-link">GitHub</a>
+                </div>
+              </div>
+              <div class="contact-form">
+                <input type="text" placeholder="Your Name" class="contact-input">
+                <input type="email" placeholder="Your Email" class="contact-input">
+                <textarea placeholder="Your Message" class="contact-textarea"></textarea>
+                <button class="contact-submit">Send Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+
+</body>
+
 </html>
