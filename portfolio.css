@@ -396,6 +396,18 @@ body {
   max-height: 80%;
   padding: 20px;
   margin: 0 auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.content-inner::-webkit-scrollbar {
+  width: 0; /* Chrome, Safari, Opera */
+  display: none; /* Hide scrollbar */
+}
+
+.content-inner::-webkit-scrollbar-thumb,
+.content-inner::-webkit-scrollbar-track {
+  display: none; /* Hide all scrollbar components */
 }
 
 .circle:hover .content-inner {
@@ -408,9 +420,9 @@ body {
   font-family: monospace;
   font-size: 1.3rem;
   color: #333;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
+  margin-bottom: 15px; /* Slightly increased margin to compensate for removed border */
+  border-bottom: none; /* Remove the horizontal line */
+  padding-bottom: 0; /* Remove padding that was needed for the border */
   text-align: center;
 }
 
@@ -479,7 +491,7 @@ body {
 .circle-1 .expanded-content .profile-image,
 .content-inner .profile-image {
   width: 100px;
-  height: 300px;
+  height: 200px;
   border-radius: 50%;
   border: 4px solid #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -550,6 +562,7 @@ h3 {
   position: relative;
   margin: 10px 0;
   padding-left: 15px;
+  font-family: monospace;
   /* Reduced from 30px */
 }
 
@@ -642,18 +655,22 @@ h3 {
 }
 
 .contact-submit {
-  background: #333;
+  font-family: monospace;
+  background-color: #333;
   color: white;
   border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 4px;
   cursor: pointer;
-  font-family: monospace;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .contact-submit:hover {
-  background: #555;
+  background-color: #555;
+}
+
+.contact-submit:active {
+  transform: scale(0.98);
 }
 
 .content-inner {
@@ -835,7 +852,7 @@ body.dark-mode .social-link {
 }
 
 body.dark-mode .expanded-content h2 {
-  border-bottom: 1px solid #333;
+  border-bottom: none; /* Remove border in dark mode too */
 }
 
 body.dark-mode .skill-bar {
@@ -876,12 +893,12 @@ body.dark-mode .contact-textarea {
 }
 
 body.dark-mode .contact-submit {
-  background: #fff;
+  background-color: #fff;
   color: #000;
 }
 
 body.dark-mode .contact-submit:hover {
-  background: #ddd;
+  background-color: #ddd;
 }
 
 body.dark-mode .dark-mode-toggle {
@@ -904,4 +921,119 @@ body.dark-mode .content-inner .profile-image {
 
 body.dark-mode .caption-text {
   color: rgba(0, 0, 0, 0.7);
+}
+
+/* Custom validation popup styling */
+.validation-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  font-family: monospace;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.popup-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.popup-btn:hover {
+  background-color: #555;
+}
+
+#popup-message {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Dark mode for popup */
+body.dark-mode .popup-content {
+  background-color: #222;
+  color: white;
+}
+
+body.dark-mode .popup-btn {
+  background-color: #555;
+}
+
+body.dark-mode .popup-btn:hover {
+  background-color: #777;
+}
+
+/* Social media icons styling */
+.social-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+  fill: currentColor; /* This makes the SVG take the color of the text */
+  transition: transform 0.2s ease;
+}
+
+.social-link {
+  font-family: monospace;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-2px);
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.1);
+}
+
+/* Dark mode styling for social links */
+body.dark-mode .social-link {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+body.dark-mode .social-link:hover {
+  background-color: #444;
 }

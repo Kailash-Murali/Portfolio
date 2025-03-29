@@ -152,5 +152,71 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Get popup elements
+  const validationPopup = document.getElementById("validation-popup");
+  const popupMessage = document.getElementById("popup-message");
+  const closePopup = document.querySelector(".close-popup");
+  const popupOkBtn = document.getElementById("popup-ok-btn");
+  
+  // Function to show popup with message
+  function showValidationPopup(message) {
+    popupMessage.textContent = message;
+    validationPopup.style.display = "flex";
+  }
+  
+  // Function to hide popup
+  function hideValidationPopup() {
+    validationPopup.style.display = "none";
+  }
+  
+  // Close popup when clicking X or OK
+  closePopup.addEventListener("click", hideValidationPopup);
+  popupOkBtn.addEventListener("click", hideValidationPopup);
+  
+  // Close popup when clicking outside
+  validationPopup.addEventListener("click", function(event) {
+    if (event.target === validationPopup) {
+      hideValidationPopup();
+    }
+  });
+  
+  // Email functionality for contact form
+  const sendEmailBtn = document.getElementById("send-email-btn");
+  if (sendEmailBtn) {
+    sendEmailBtn.addEventListener("click", function() {
+      const name = document.getElementById("sender-name").value.trim();
+      const email = document.getElementById("sender-email").value.trim();
+      const message = document.getElementById("sender-message").value.trim();
+      
+      // Form validation
+      if (!name) {
+        showValidationPopup("Please enter your name.");
+        return;
+      }
+      
+      if (!email) {
+        showValidationPopup("Please enter your email address.");
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showValidationPopup("Please enter a valid email address.");
+        return;
+      }
+      
+      if (!message) {
+        showValidationPopup("Please enter your message.");
+        return;
+      }
+      
+      // If all validations pass, open email client
+      let body = `Message from ${name} (${email}):\n\n${message}`;
+      const mailtoLink = `mailto:kailashmurali17@gmail.com?subject=Portfolio Contact: ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoLink, '_blank');
+    });
+  }
+
 });
 
