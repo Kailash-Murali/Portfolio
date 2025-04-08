@@ -1,2 +1,2 @@
 # WebDev
-My first portfolio! 
+My first portfolio! Cutomized for desktop! Mobile website loading...
